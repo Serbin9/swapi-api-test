@@ -11,26 +11,26 @@ class FilmList extends Component {
         const {isOpen}=this.state;
             this.setState({isOpen:!isOpen})
         }
-           
-        
-        
-    
+
+
+
+
     render() {
-        const {searchFilm,sorted}=this.props;
+        const {searchFilm}=this.props;
         const{isOpen}=this.state;
         return (
                 <>
                 <div>
                 <ul className={s.ulKey}>
-                    {sorted.map(({title, url, episode_id, producer, director, release_date,opening_crawl, planet})=>(
+                    {searchFilm.map(({title, url, episode_id, producer, director, release_date,opening_crawl, planet})=>(
                         <li key={episode_id} className={s.liKey}>
                         <a href={url} rel="noopener noreferrer" target="blank">
                             {title}
                         </a>
-                        
+
                         <button type="button" onClick={this.handleInformations}>More informations</button>
                      {isOpen&&<Informations discriptions={opening_crawl} id={episode_id} producer={producer} director={director} release_date={release_date}/>}
-   
+
                         </li>
 
 
@@ -38,14 +38,14 @@ class FilmList extends Component {
                 </ul>
 
                 </div>
-               
+
                 </>
             )
         }
-       
-        
-    
-    
+
+
+
+
     }
     // FilmList.propTypes={
     //     allFilms: PropTypes.arrayOf(PropTypes.shape({
@@ -54,7 +54,6 @@ class FilmList extends Component {
     //         episode_id: PropTypes.string.isRequired
     //     }).isRequired)
     //     .isRequired
-    
+
     // }
 export default FilmList;
-

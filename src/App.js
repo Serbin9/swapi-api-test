@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FilmList from './component/FilmList';
+import axios from "axios";
 import LoaderPage from './component/loader/LoaderPage';
 import ErorrForSite from './component/error/ErorrForSite';
 import fetchArtile from './services/services-api';
@@ -17,12 +18,12 @@ class App extends Component {
   error: null,
   isOpen:false,
   findFilm:"",
-  sortType:'asc'
+  sortType:'asc',
    }
    componentDidMount() {
      this.fetchForQueryArticles()
       }
-   
+
 fetchForQueryArticles=()=>{
   this.setState({isLoading:true})
   fetchArtile()
@@ -32,33 +33,28 @@ fetchForQueryArticles=()=>{
 .catch(error=>{this.setState({error: error})})
 .finally(()=>{this.setState({isLoading:false})})  
 }
-search(sorted, findFilm){
+search(allFilms, findFilm){
   if(findFilm.length===0){
-    return sorted
+    return allFilms
   }
- return sorted.filter((film)=>{return film.title.toLowerCase().indexOf(findFilm.toLowerCase())>-1})
+ return allFilms.filter((film)=>{return film.title.toLowerCase().indexOf(findFilm.toLowerCase())>-1})
 }
 onSearchIntrestedFilm=e=>{
   this.setState({findFilm: e.target.value})
 }
-
- 
 onSort=sortType=>{
   this.setState({sortType})
 }
-
   render() {
-
-  const {allFilms, isLoading, error, isOpen, findFilm, sortType}= this.state
+    const {allFilms, isLoading, error, isOpen, findFilm, sortType}= this.state
 
     const searchFilm = this.search(allFilms, findFilm)
-
     const sorted = allFilms.sort((a, b)=>{
       const isReversed = (sortType==="asc") ? 1 : -1;
       return isReversed*a.title.localeCompare(b.title)
 
     })
-    
+
     return (
       <div className={s.container}>
           <div className={s.allfon}>
@@ -67,16 +63,16 @@ onSort=sortType=>{
             <button type="button" onClick={()=>this.onSort('asc')}>Sort Start</button>
             <button type="button" onClick={()=>this.onSort('desc')}>Sort finish</button>
             </div>
-          {/* <SortOffFilms sortOff={sortOff}/> */}
+          {/* <SortOffFilms/> */}
           {error && <ErorrForSite text={error.message}/>}
           {isLoading && <LoaderPage/>}
-          {allFilms.length>0 && <FilmList searchFilm={searchFilm} sorted={sorted}/>}
-      
+          {allFilms.length>0 && <FilmList searchFilm={searchFilm}/>}
+
       </div>
       </div>
-     
+
     );
   }
 }
 
-export default App;
+export default App; 
