@@ -1,0 +1,17 @@
+.fon{
+background-image: url('./image/STAR-WARS-Jedi-Fallen-Order-2.jpg');}
+
+.liKey{
+    list-style-type: none;
+    width: 200px;
+    height: auto;
+    border: 5px color red;
+    background-color: green;
+}
+.ulKey{
+    padding-inline-start: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
