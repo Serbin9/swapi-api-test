@@ -16,13 +16,13 @@ class FilmList extends Component {
         
     
     render() {
-        const {searchFilm}=this.props;
+        const {searchFilm,sorted}=this.props;
         const{isOpen}=this.state;
         return (
                 <>
                 <div>
                 <ul className={s.ulKey}>
-                    {searchFilm.map(({title, url, episode_id, producer, director, release_date,opening_crawl, planet})=>(
+                    {sorted.map(({title, url, episode_id, producer, director, release_date,opening_crawl, planet})=>(
                         <li key={episode_id} className={s.liKey}>
                         <a href={url} rel="noopener noreferrer" target="blank">
                             {title}
