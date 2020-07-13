@@ -1,19 +1,20 @@
-import React from 'react'
+import React from 'react';
+import style from './informations.module.css'
 
-const Informations = ({discriptions, id, director, producer, release_date}) =>{
-    console.log(id)
-    
+const Informations = ({info}) =>{
     return(
-        <div key={id}>
+
+        <div key={info.id}>
             <div>
-                <p>Episode: {id}</p>
-                <p>Director: {director}</p>
-                <p>Producers: {producer}</p>
-                <p>Release date: {release_date}</p>
+                <p c>Episode: {info.episode_id}</p>
+                <p>Director: {info.title}</p>
+                <p>Producers: {info.producer}</p>
+                <p>Release date: {info.release_date}</p>
             </div>
-        <p>Discriptons of episode: {discriptions}</p>
+        <p className={style.discriptions}>Discriptons of episode: {info.opening_crawl}</p>
+
         
-        </div>
+     </div>
     )
 }
 

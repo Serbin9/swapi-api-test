@@ -1,0 +1,10 @@
+.positions{
+    display: flex;
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.fon{
+    width:1280px
+}
