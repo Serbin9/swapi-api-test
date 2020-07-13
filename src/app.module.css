@@ -1,7 +1,39 @@
-.allfon{
-    width: 600px;
-    margin:0 auto;
+.title{
+    padding: 30px;
+    text-align: center;
+    color: whitesmoke;
 }
 .container{
     width: 1280px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-image: url(./component/image/STAR-WARS-Jedi-Fallen-Order-2.jpg);
+    background-size: cover;
+}
+.searchForm{
+    width: 400px;
+    height: 40px;
+    display: flex;
+    margin: 0 auto;
+}
+.buttonContainer{
+    width: 408px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.buttonPositions{
+  width: 150px;
+  height: 25px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+.searchPanel{
+    margin: 0 auto;
 }

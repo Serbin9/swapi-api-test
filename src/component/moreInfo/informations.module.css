@@ -1,34 +1,23 @@
-
-.container{
-    width: 400px;
-    display: flex;
-    margin: 0 auto;
-    justify-content: space-between;
-    flex-flow: column;
+.mainInform{
+margin-top: 100px;
+width: 650px;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
-.episode{
-    font-size: large;
-    font-weight: 900;
-    margin: 0 auto;
-}
-.director, .producer, .date{
-    font-size: large;
-    font-weight: 700;
-    margin: 0 auto;
-}
-.discriptions{
-    width: 100%;
-    font-size: 20px;
-    font-weight: 500;
+.moreInfo{
     text-align: justify;
-    margin-bottom:40px;
+    color: whitesmoke;
+    /* margin: 0 auto; */
 }
-.buttonShowMore{
-    width: 100%;
-    height: 25px;
-    border-radius: 5px;
-    background-color: greenyellow;
-    text-align: center;
-    margin-bottom: 10px;
+.title{
+    margin: 0 auto;
+    color: whitesmoke;
 
+}
+.director, .episode, .producer, .realiz, .descriptions{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: whitesmoke;
+    font-size: 16px;
 }

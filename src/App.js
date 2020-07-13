@@ -6,7 +6,6 @@ import ErorrForSite from './component/error/ErorrForSite';
 import fetchArtile from './services/services-api';
 import SearchForm from './component/searchForm/SearchForm';
 import s from "./app.module.css"
-import SortOffFilms from './component/sort/SortOffFilms';
 
 
 
@@ -57,20 +56,26 @@ onSort=sortType=>{
 
     return (
       <div className={s.container}>
-          <div className={s.allfon}>
-          <SearchForm onSearchIntrestedFilm={this.onSearchIntrestedFilm}/>
-          <div className={s.positions}>
-            <button type="button" onClick={()=>this.onSort('asc')}>Sort Start</button>
-            <button type="button" onClick={()=>this.onSort('desc')}>Sort finish</button>
+ <div className={s.title}>
+              <h1>SWAPI-API Test </h1>
+      <div >
+          <div>
+            <div className={s.searchPanel}>
+            <SearchForm onSearchIntrestedFilm={this.onSearchIntrestedFilm}/>
             </div>
-          {/* <SortOffFilms/> */}
+          <div className={s.buttonContainer}>
+            <button className={s.buttonPositions} type="button" onClick={()=>this.onSort('asc')}>Sort Start</button>
+            <button className={s.buttonPositions} type="button" onClick={()=>this.onSort('desc')}>Sort finish</button>
+          </div>
           {error && <ErorrForSite text={error.message}/>}
           {isLoading && <LoaderPage/>}
           {allFilms.length>0 && <FilmList searchFilm={searchFilm}/>}
 
       </div>
       </div>
-
+    </div>
+      </div>
+     
     );
   }
 }

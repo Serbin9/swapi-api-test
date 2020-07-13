@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import style from './search.module.css'
 const SearchForm = ({onSearchIntrestedFilm}) => {
     return(
-    <>
-    <input type="text" onChange={onSearchIntrestedFilm}/>
-    </>
+    <div className={style.searchFormContainer}>
+        <input className={style.searchForm} type="text" onChange={onSearchIntrestedFilm}/>
+    </div>
     )
 };
 

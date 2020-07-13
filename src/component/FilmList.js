@@ -20,35 +20,34 @@ class FilmList extends Component {
     }
   };
 
-   // else{
-    //   this.setState(prevState => ({
-    //   ...prevState,isOpen:true,targetFilm:[...targetFilm]
-    //   }));
-    //   console.log('this.stateInFunction', this.state)
-    // }
 
   render() {
     const { searchFilm } = this.props;
     const { isOpen } = this.state;
-    console.log('this.state', this.state)
     return (
       <>
-        <div>
-          <ul className={s.ulKey}>
+        <div className={s.containerUL}>
+          <ul className={s.Columb}>
+            <div className={s.ulKey}>
             {searchFilm.map((elem) => (
               <li key={elem.episode_id} className={s.liKey}>
-                <a href={elem.url} rel="noopener noreferrer" target="blank">
+                <a href={elem.url} rel="noopener noreferrer" target="blank" className={s.titleFilm}>
                   {elem.title}
                 </a>
-                <button
+                <div className={s.bottonMore}>
+                <button className={s.buttonInfo}
                   type="button"
                   onClick={() => this.handleInformations(elem.episode_id)}
                 >
                   More informations
                 </button>
+                </div>
               </li>
-            ))}
-            {isOpen && <Informations info={this.state.targetFilm} />}
+            ))}    
+            </div>
+            <div className={s.moreInformations}>
+              {isOpen && <Informations info={this.state.targetFilm} />}
+            </div>
           </ul>
         </div>
       </>
