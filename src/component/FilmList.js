@@ -54,13 +54,13 @@ class FilmList extends Component {
     );
   }
 }
-FilmList.propTypes={
-    allFilms: PropTypes.arrayOf(PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-        episode_id: PropTypes.string.isRequired
-    }).isRequired)
-    .isRequired
+// FilmList.propTypes={
+//     allFilms: PropTypes.arrayOf(PropTypes.shape({
+//         title: PropTypes.string.isRequired,
+//         url: PropTypes.string.isRequired,
+//         episode_id: PropTypes.string.isRequired
+//     }).isRequired)
+//     .isRequired
 
-}
+// }
 export default FilmList;
