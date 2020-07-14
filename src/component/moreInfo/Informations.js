@@ -5,7 +5,7 @@ const Informations = ({info}) =>{
 
     return(
 
-        <div key={info.id}>
+        <div key={info.id} >
             <div className={style.mainInform}>
                 <h1 className={style.title}>{info.title}</h1>
                 <p className={style.episode}>Episode: {info.episode_id}</p>
